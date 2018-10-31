@@ -14,8 +14,7 @@ class UserAdmin(DjangoUserAdmin):
     change_password_form = AdminPasswordChangeForm
     list_display = ('email', 'user_type', 'is_active')
     fieldsets = (
-        (None, {'fields': ('email','first_name', 'password','user_type', 'date_joined')}),
-#        (_('Personal info'), {'fields': ('first_name', 'last_name')}),
+        (None, {'fields': ('email', 'password','user_type', 'date_joined')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
 #        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
@@ -26,7 +25,7 @@ class UserAdmin(DjangoUserAdmin):
             'fields': ('email', 'password1', 'password2','user_type'),
         }),
     )
-    search_fields = ('email', 'user_type','first_name')
+    search_fields = ('email', 'user_type')
     ordering = ('email',)
     save_on_top = True
     readonly_fields = ["date_joined","email","is_staff","is_superuser"]
