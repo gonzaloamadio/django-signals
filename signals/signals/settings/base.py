@@ -117,7 +117,7 @@ TEMPLATES = [
 ########## END TEMPLATE CONFIGURATION
 
 ########## MIDDLEWARE CONFIGURATION
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -212,11 +212,11 @@ LOCAL_APPS = (
 
     ### TEST OF ENTITIES IN signals.py ###
 
-#    'signals.apps.entities', # WORKING OK
+    'signals.apps.entities', # WORKING OK
 
     ### TEST OF ENTITIES IN signals.py ###
 
-    'signals.apps.entities_2.apps.Entities2Config',
+#    'signals.apps.entities_2.apps.Entities2Config',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
